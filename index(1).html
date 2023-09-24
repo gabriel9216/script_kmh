@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sjafioaejfio</title>
+</head>
+<body bgcolor="lightblue">
+    <center><h1>Program przeliczjący na mile morskie i węzły</h1></center>
+    <fieldset><p>Podaj ilośc kilometrów: <input type="number" id="km"> km</p>
+    <p><button onclick="przeliczanie_mile()">Oblicz</button></p>
+    <p style="font-weight: bold;" id="wynik_mile"></p> </fieldset>
+    
+    <fieldset><p>Podaj ilośc kilometrów na godzine: <input type="number" id="km_h"> km/h</p>
+    <p><button onclick="przeliczanie_wezly()">Oblicz</button></p>
+    <p style="font-weight: bold;" id="wynik_wezly"></p></fieldset>
+    <script>
+        function przeliczanie_mile() {
+            const kilometry = km.value * 1;
+            if(isNaN(kilometry) || km.value==="" || kilometry<=0) {
+                alert("Wprowadź prawidłową wartość");
+                return;
+            }
+
+            wynik_mile.innerText = "Jest to " +  0.62*kilometry + "mil";
+        }
+
+        function przeliczanie_wezly() {
+            const kilometry_h = km_h.value * 1;
+            if(isNaN(kilometry_h) || km_h.value==="" || kilometry_h<=0) {
+                alert("Wprowadź prawidłową wartość");
+                return;
+            }
+
+            wynik_wezly.innerText = "Jest to " + kilometry_h* 0.52 + "wezłow" ;
+        }
+    </script>
+</body>
+</html>
